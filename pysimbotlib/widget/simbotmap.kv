@@ -1,0 +1,84 @@
+<ObstacleItem>:
+    group: 'obs'
+    pos: self.pos
+    size: self.size
+    canvas:
+        Color:
+            rgba: 0, 0, 0, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+        Color:
+            rgba: 0.114, 0.149, 0.357, 1
+        Rectangle:
+            size: self.width - 4, self.height - 4
+            pos: self.x + 2, self.y + 2
+
+<ObjectiveItem>:
+    group: 'obj'
+    pos: self.pos
+    size: self.size
+    canvas:
+        Color:
+            rgba: 0, 0, 0, 0.7
+        Rectangle:
+            pos: self.pos
+            size: self.size
+        Color:
+            rgba: 0.976, 0.047, 0.635, 0.67
+        Rectangle:
+            size: self.width - 4, self.height - 4
+            pos: self.x + 2, self.y + 2
+
+<PySimbotMap>:
+    playground: playground
+    pos: 0, 0
+    size: 900, 600
+    canvas:
+        Color:
+            rgba: 0.7, 0.7, 0.7, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+
+    BoxLayout:
+        orientation: 'horizontal'
+        size_hint: None, None
+        size: 900, 600
+
+        RelativeLayout:
+            size_hint: None, None
+            size: 700, 600
+            pos: 0, 0 
+            canvas:
+                Color:
+                    rgba: 0,0,0,0.7
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+                Color:
+                    rgba: 1,1,1,0.7
+                Rectangle:
+                    size: self.width - 10, self.height - 10
+                    pos: self.x + 5, self.y + 5
+            
+            Widget:
+                id: playground
+                size_hint: None, None
+                size: self.parent.width - 10, self.parent.height - 10
+                pos: self.parent.x + 5, self.parent.y + 5
+                canvas:
+                    Color:
+                        rgba: 1, 0.78, 0.78, 0.5
+                    Rectangle:
+                        pos: self.pos
+                        size: self.size
+
+        Label:
+            id: 'lbl_description'
+            text: 'Time: '+ str(root.iteration) + '\nEat: ' + str(root.eat_count) + '\nFood Moved: ' + str(root.food_move_count) + '\nScore: ' + str(root.score) + ' %\n\n----------------------\n[Shortcuts]\nn: to change the food position'
+            text_size: self.size
+            padding: (15, 10)
+            halign: 'left'
+            valign: 'top'

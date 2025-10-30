@@ -1,0 +1,35 @@
+#:kivy 1.0.9
+
+<Robot>:
+    direction: 0
+    size: 20, 20
+    pos: self.pos
+    mycolor: (0.7, 0, 0, 1)
+    canvas.before:
+        PushMatrix
+        Rotate:
+            angle: (360 - self.direction) % 360
+            origin: self.center
+
+        Color:
+            rgba: self.mycolor
+        Ellipse:
+            pos: self.pos
+            size: self.size
+        
+        Color:
+            rgba: 1, 1, 1, 1
+        Ellipse:
+            pos: self.x + 2, self.y + 2
+            size: 16, 16
+
+        Color:
+            rgba: 0, 0, 0, 1
+        Line:
+            cap: 'none'
+            width: 2
+            points: self.center_x, self.center_y , self.center_x + 10, self.center_y
+
+    canvas.after:
+        PopMatrix
+
