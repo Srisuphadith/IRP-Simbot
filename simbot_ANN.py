@@ -4,8 +4,8 @@ import os, sys
 import random
 import keras
 import numpy as np
-from pysimbotlib.Window import PySimbotApp
-from pysimbotlib.Robot import Robot
+from pysimbotlib_FLC.Window import PySimbotApp
+from pysimbotlib_FLC.Robot import Robot
 from kivy.core.window import Window
 from kivy.logger import Logger
 import random

@@ -3,8 +3,8 @@
 import os, sys
 import random
 import pandas as pd
-from pysimbotlib.Window import PySimbotApp
-from pysimbotlib.Robot import Robot
+from pysimbotlib_FLC.Window import PySimbotApp
+from pysimbotlib_FLC.Robot import Robot
 from kivy.core.window import Window
 from kivy.logger import Logger
 import random
