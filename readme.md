@@ -1,4 +1,4 @@
-# IRP-Simbot
+# IRP-Simbot-ANN
 ---
 - run sim bot
 
